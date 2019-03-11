@@ -1,6 +1,6 @@
 import { Calculator } from "./calculator";
-import { expect } from 'chai';
 import { FractionalNumber } from "./fractional-number";
+import { expect } from 'chai';
 import 'mocha';
 
 
