@@ -1,6 +1,6 @@
 import { FractionalNumber } from "./fractional-number";
 
-export class Calculator {
+export class CalculatorService {
     public static plus (a: FractionalNumber, b: FractionalNumber): FractionalNumber {
         let result: FractionalNumber;
         if(a.denominator === b.denominator) {
