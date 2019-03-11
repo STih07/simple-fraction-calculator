@@ -1,0 +1,27 @@
+{
+  "name": "fraction-calculator",
+  "version": "0.0.1",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.3333"
+  },
+  "scripts": {
+    "test": "mocha -r ts-node/register *.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/STih07/simple-fraction-calculator.git"
+  },
+  "author": "stih07",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/STih07/simple-fraction-calculator/issues"
+  },
+  "homepage": "https://github.com/STih07/simple-fraction-calculator#readme"
+}
