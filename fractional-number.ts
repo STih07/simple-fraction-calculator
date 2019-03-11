@@ -1,4 +1,4 @@
-export interface FractionalNumber {
+export type FractionalNumber = {
     numerator: number;
     denominator: number;
 }
