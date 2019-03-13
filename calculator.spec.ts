@@ -109,4 +109,8 @@ describe('Calculate with more then one operators and brackets', () => {
         const result = Calculator.execute("(3/2-1/2)*(1/2-2/3)/(3/4-5/6)");
         expect(result).to.equal("2");
     });
+    it('Given "((2/3) * (1/6)". Should return "error"', () => {
+        const result = () => {Calculator.execute("((2/3) * (1/6)")};
+	expect(result).to.throw('Syntax error');
+    });
 });
