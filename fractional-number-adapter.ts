@@ -17,6 +17,7 @@ export class FractionalNumberAdapter {
 
     public static numberToString(num: FractionalNumber): string {
         if(num.denominator === 0) throw new Error('Denominator can\'t be 0.');
+        if(num.numerator === 0) return "0";
         if(num.denominator === 1) return `${num.numerator}`;
         if(num.denominator === -1) return `${num.numerator*-1}`;
         return `${num.numerator}/${num.denominator}`

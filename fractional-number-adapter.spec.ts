@@ -21,6 +21,10 @@ describe('stringToNumber method', () => {
         const expected: FractionalNumber = {numerator: 10, denominator: 1};
         expect(result).to.deep.equal(expected);
     });
+    it('Given "0". Should return {numerator: 0, denominator: 1}', () => {
+        const result = FractionalNumberAdapter.stringToNumber("0");
+        expect(result).to.deep.equal({numerator: 0, denominator: 1});
+    });
     it('Given "0/5". Should return {numerator: 0, denominator: 5}', () => {
         const result: FractionalNumber = FractionalNumberAdapter.stringToNumber("0/5");
         const expected: FractionalNumber = {numerator: 0, denominator: 5};
@@ -56,5 +60,9 @@ describe('numberToString method', () => {
     it('Given {numerator: 2, denominator: 0}. Should throw error "Denominator can\'t be 0."', () => {
         const result = () => {FractionalNumberAdapter.numberToString({numerator: 2, denominator: 0})};
         expect(result).to.throw('Denominator can\'t be 0.');
+    });
+    it('Given {numerator: 0, denominator: 1}. Should return 0', () => {
+        const result = FractionalNumberAdapter.numberToString({numerator: 0, denominator: 1});
+        expect(result).to.deep.equal("0");
     });
 });
