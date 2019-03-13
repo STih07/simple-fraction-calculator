@@ -28,16 +28,21 @@ describe('ExpressionParser.parse method', () => {
         const expected = [{numerator: -1, denominator: -41}, "/", {numerator: -5, denominator: 1}];
         expect(value).to.deep.equal(expected);
     });
-    it('Given "-1//5". Should throw "Unexpected input: you can\'t have 2 operators between."', () => {
+    it('Given "-1//5". Should throw "Unexpected input."', () => {
         const value = () => { ExpressionParser.parse("-1//5") };
-        expect(value).to.throw("Unexpected input: you can't have 2 operators between.");
+        expect(value).to.throw("Unexpected input.");
     });
-    it('Given "-1 5". Should throw "Unexpected input: you can\'t have 2 numbers between without operator."', () => {
+    it('Given "-1 5". Should throw "Unexpected input."', () => {
         const value = () => { ExpressionParser.parse("-1 5") };
-        expect(value).to.throw("Unexpected input: you can't have 2 numbers between without operator.");
+        expect(value).to.throw("Unexpected input.");
     });
     it('Given "-1/5 + 4/3 /42 dfglfdg ". Should throw "Unexpected input."', () => {
         const value = () => { ExpressionParser.parse("-1/5 + 4/3 /42 dfglfdg ") };
         expect(value).to.throw("Unexpected input.");
     });
+    it('Given 3/2-1/2. Should return [3/2, "-", 1/2]', () => {
+        const value = ExpressionParser.parse("3/2-1/2");
+        const expected = [{numerator: 3, denominator: 2}, "-", {numerator: 1, denominator: 2}];
+        expect(value).to.deep.equal(expected);
+    })
 });
