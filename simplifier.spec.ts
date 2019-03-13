@@ -39,4 +39,14 @@ describe('Simplifier.simplify method', () => {
         const result: FractionalNumber = Simplifier.simplify(a);
         expect(result).to.deep.equal({numerator: 1, denominator: 100});
     });
+    it('Given 0/1. \nShould return 0/1', () => {
+        const a: FractionalNumber = {numerator: 0, denominator: 1};
+        const result: FractionalNumber = Simplifier.simplify(a);
+        expect(result).to.deep.equal({numerator: 0, denominator: 1});
+    });
+    it('Given -4/6. \nShould return -2/3', () => {
+        const a: FractionalNumber = {numerator: -4, denominator: 6};
+        const result: FractionalNumber = Simplifier.simplify(a);
+        expect(result).to.deep.equal({numerator: -2, denominator: 3});
+    });
 });

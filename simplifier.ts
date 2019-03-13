@@ -3,13 +3,13 @@ import { FractionalNumber } from "./fractional-number";
 export class Simplifier {
 
     public static simplify(num: FractionalNumber): FractionalNumber {
-        let [a, b] = [num.numerator, num.denominator];
-        while(a !== b) {
-            if(a > b) a -= b;
-            else b -= a;
+        let [a, b] = [Math.abs(num.numerator), Math.abs(num.denominator)];
+        while(a !== 0 &&  b !== 0) {
+            if(a > b) a %= b;
+            else b %= a;
         }
-        num.denominator /= a;
-        num.numerator /= a;
+        num.denominator /= a+b;
+        num.numerator /= a+b;
         return num;
     }
 }
