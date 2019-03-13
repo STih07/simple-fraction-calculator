@@ -57,6 +57,16 @@ describe('CalculatorService.mult method', () => {
         const result = CalculatorService.mult(a, b);
         expect(result).to.deep.equal({numerator: -5, denominator: 300});
     });
+    it('Given -5/6 and 0.\n Should return -0.', () => {
+        const [a, b]: FractionalNumber[] = [{numerator: -5, denominator: 6}, {numerator: 0, denominator: 1}];
+        const result = CalculatorService.mult(a, b);
+        expect(result).to.deep.equal({numerator: -0, denominator: 6});
+    });
+    it('Given 3 and 1.\n Should return 3.', () => {
+        const [a, b]: FractionalNumber[] = [{numerator: 3, denominator: 1}, {numerator: 1, denominator: 1}];
+        const result = CalculatorService.mult(a, b);
+        expect(result).to.deep.equal({numerator: 3, denominator: 1});
+    });
 });
 
 describe('CalculatorService.divide method', () => {
