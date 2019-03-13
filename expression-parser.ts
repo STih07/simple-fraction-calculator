@@ -8,6 +8,7 @@ export class ExpressionParser {
     public static parse(exp: string): Array<string | FractionalNumber> {
         let curExpLikeArray: Array<string | FractionalNumber> = [];
         while(exp) {
+            exp = exp.trim();
             let lastElement = curExpLikeArray[curExpLikeArray.length - 1];
             if (lastElement && isFractionalNumber(lastElement)) {
                 let operator = exp.match(operatorRegexp);

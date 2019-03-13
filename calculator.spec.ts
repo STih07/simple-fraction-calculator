@@ -105,8 +105,16 @@ describe('Calculate with more then one operators and brackets', () => {
         const result = Calculator.execute("(3/2 - 1/2) * (1/2 - 2/3) / (3/4 - 5/6)");
         expect(result).to.equal("2");
     });
+    it('Given "   (     3/2 - 1/2        )    *    (      1/2     -     2/3    )   /   (   3/4   -   5/6   )". Should return "2"', () => {
+        const result = Calculator.execute("   (     3/2 - 1/2        )    *    (      1/2     -     2/3    )   /   (   3/4   -   5/6   )");
+        expect(result).to.equal("2");
+    });
     it('Given "(3/2-1/2)*(1/2-2/3)/(3/4-5/6)". Should return "2"', () => {
         const result = Calculator.execute("(3/2-1/2)*(1/2-2/3)/(3/4-5/6)");
         expect(result).to.equal("2");
+    });
+    it('Given "1/(2/(3/(4)))". Should return "3/8"', () => {
+        const result = Calculator.execute("1/(2/(3/(4)))");
+        expect(result).to.equal('3/8');
     });
 });
