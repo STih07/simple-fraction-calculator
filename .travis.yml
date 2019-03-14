@@ -1,7 +1,10 @@
 language: node_js
 
+before_install:
+  npm i -g npm@latest
+  npm i -g typescript@latest
+
 before_script:
-  npm i
   tsc
 
 script:
