@@ -1,4 +1,4 @@
-import { FractionalNumber } from "./fractional-number";
+import { FractionalNumber } from "../fractional-number";
 
 export class CalculatorService {
     public static plus (a: FractionalNumber, b: FractionalNumber): FractionalNumber {

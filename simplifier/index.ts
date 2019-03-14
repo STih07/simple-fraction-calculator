@@ -1,4 +1,4 @@
-import { FractionalNumber } from "./fractional-number";
+import { FractionalNumber } from "../fractional-number";
 
 export class Simplifier {
 

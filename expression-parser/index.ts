@@ -1,5 +1,5 @@
-import {FractionalNumberAdapter} from "./fractional-number-adapter";
-import {FractionalNumber, isFractionalNumber} from "./fractional-number";
+import {FractionalNumberAdapter} from "../fractional-number-adapter";
+import {FractionalNumber, isFractionalNumber} from "../fractional-number";
 
 const fracRegexp = /^\s*(-?[\d]+\/-?[\d]+|-?[\d]+)/;
 const operatorRegexp = /^\s*([+\-/*])/;

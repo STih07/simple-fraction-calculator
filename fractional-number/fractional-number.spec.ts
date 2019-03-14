@@ -1,4 +1,4 @@
-import { isFractionalNumber } from "./fractional-number";
+import { isFractionalNumber } from "./";
 import { expect } from 'chai';
 import 'mocha';
 

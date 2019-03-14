@@ -1,8 +1,8 @@
-import { FractionalNumber } from "./fractional-number";
-import { FractionalNumberAdapter } from "./fractional-number-adapter";
-import { ExpressionParser } from "./expression-parser";
-import {CalculatorService} from "./calculator-service";
-import {Simplifier} from "./simplifier";
+import { FractionalNumber } from "../fractional-number";
+import { FractionalNumberAdapter } from "../fractional-number-adapter";
+import { ExpressionParser } from "../expression-parser";
+import { CalculatorService } from "../calculator-service";
+import { Simplifier } from "../simplifier";
 
 const bracketsRegexp = /\((?:[^(]*?\))/;
 const fracRegexp = /^\s*(-?[\d]+\/-?[\d]+|-?[\d]+)/;

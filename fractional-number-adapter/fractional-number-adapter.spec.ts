@@ -1,5 +1,5 @@
-import { FractionalNumberAdapter } from "./fractional-number-adapter";
-import { FractionalNumber } from "./fractional-number";
+import { FractionalNumberAdapter } from "./";
+import { FractionalNumber } from "../fractional-number";
 import { expect } from 'chai';
 import 'mocha';
 
