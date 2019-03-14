@@ -105,12 +105,51 @@ describe('Calculate with more then one operators and brackets', () => {
         const result = Calculator.execute("(3/2 - 1/2) * (1/2 - 2/3) / (3/4 - 5/6)");
         expect(result).to.equal("2");
     });
+    it('Given "   (     3/2 - 1/2        )    *    (      1/2     -     2/3    )   /   (   3/4   -   5/6   )". Should return "2"', () => {
+        const result = Calculator.execute("   (     3/2 - 1/2        )    *    (      1/2     -     2/3    )   /   (   3/4   -   5/6   )");
+        expect(result).to.equal("2");
+    });
     it('Given "(3/2-1/2)*(1/2-2/3)/(3/4-5/6)". Should return "2"', () => {
         const result = Calculator.execute("(3/2-1/2)*(1/2-2/3)/(3/4-5/6)");
         expect(result).to.equal("2");
     });
+    it('Given "1/(2/(3/(4)))". Should return "3/8"', () => {
+        const result = Calculator.execute("1/(2/(3/(4)))");
+        expect(result).to.equal('3/8');
+    });
+});
+
+describe('Should throw an error', () => {
+    it('Given "1/2 3/4". Should throw "Unexpected input."', () => {
+        const result = () => { Calculator.execute("1/2 3/4")};
+        expect(result).to.throw('Unexpected input.');
+    });
+    it('Given "++". Should throw "Unexpected input."', () => {
+        const result = () => { Calculator.execute("++")};
+        expect(result).to.throw('Unexpected input.');
+    });
+    it('Given "))". Should throw "Unexpected input."', () => {
+        const result = () => { Calculator.execute("))")};
+        expect(result).to.throw('Unexpected input.');
+    });
+    it('Given "AAAAAAAAAAA". Should throw "Unexpected input."', () => {
+        const result = () => { Calculator.execute("AAAAAAAAAAA")};
+        expect(result).to.throw('Unexpected input.');
+    });
+    it('Given "3a + 5b". Should throw "Unexpected input."', () => {
+        const result = () => { Calculator.execute("3a + 5b")};
+        expect(result).to.throw('Unexpected input.');
+    });
+    it('Given "1/2 - ((3/8)". Should throw "Unexpected input."', () => {
+        const result = () => { Calculator.execute("1/2 - ((3/8)")};
+        expect(result).to.throw('Unexpected input.');
+    });
+    it('Given ".1/2 - ((3/8)". Should throw "Unexpected input."', () => {
+        const result = () => { Calculator.execute("1/2 - ((3/8)")};
+        expect(result).to.throw('Unexpected input.');
+    })
     it('Given "((2/3) * (1/6)". Should return "error"', () => {
         const result = () => {Calculator.execute("((2/3) * (1/6)")};
-	expect(result).to.throw('Syntax error');
+	      expect(result).to.throw('Unexpected input.');
     });
 });

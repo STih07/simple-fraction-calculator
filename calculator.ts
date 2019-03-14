@@ -5,6 +5,7 @@ import {CalculatorService} from "./calculator-service";
 import {Simplifier} from "./simplifier";
 
 const bracketsRegexp = /\((?:[^(]*?\))/;
+const fracRegexp = /^\s*(-?[\d]+\/-?[\d]+|-?[\d]+)/;
 
 
 export class Calculator {
@@ -43,12 +44,13 @@ export class Calculator {
             });
             if(manual.length === 1) {
                 let value: FractionalNumber = Simplifier.simplify(manual[0] as FractionalNumber);
-                exp = exp.slice(0, curBrackets.index) + FractionalNumberAdapter.numberToString(value) + exp.slice(curBrackets.index + curBrackets[0].length);
+                exp = exp.slice(0, curBrackets.index) + ' ' + FractionalNumberAdapter.numberToString(value) + ' ' + exp.slice(curBrackets.index + curBrackets[0].length);
                 curBrackets = exp.match(bracketsRegexp);
             } else {
                 throw new Error('Unexpected input.')
             }
         }
-        return exp;
+        if( exp.match(fracRegexp) ) return exp.trim();
+        else throw new Error('Unexpected input.');
     }
 }
