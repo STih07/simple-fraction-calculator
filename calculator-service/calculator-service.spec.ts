@@ -1,5 +1,5 @@
-import { CalculatorService } from "./calculator-service";
-import { FractionalNumber } from "./fractional-number";
+import { CalculatorService } from "./";
+import { FractionalNumber } from "../fractional-number";
 import { expect } from 'chai';
 import 'mocha';
 

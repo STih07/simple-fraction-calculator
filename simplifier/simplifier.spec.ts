@@ -1,5 +1,5 @@
-import { Simplifier } from "./simplifier";
-import { FractionalNumber } from "./fractional-number";
+import { Simplifier } from "./";
+import { FractionalNumber } from "../fractional-number";
 import { expect } from 'chai';
 import 'mocha';
 

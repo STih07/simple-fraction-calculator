@@ -1,4 +1,4 @@
-import { ExpressionParser } from "./expression-parser";
+import { ExpressionParser } from "./";
 import { expect } from 'chai';
 import 'mocha';
 
