@@ -148,4 +148,8 @@ describe('Should throw an error', () => {
         const result = () => { Calculator.execute("1/2 - ((3/8)")};
         expect(result).to.throw('Unexpected input.');
     })
+    it('Given "((2/3) * (1/6)". Should return "error"', () => {
+        const result = () => {Calculator.execute("((2/3) * (1/6)")};
+	      expect(result).to.throw('Unexpected input.');
+    });
 });
