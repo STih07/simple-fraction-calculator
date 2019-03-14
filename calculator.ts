@@ -50,7 +50,8 @@ export class Calculator {
                 throw new Error('Unexpected input.')
             }
         }
-        if( exp.match(fracRegexp) ) return exp.trim();
+        let result = exp.trim();
+        if( ExpressionParser.parse(result) ) return result;
         else throw new Error('Unexpected input.');
     }
 }
