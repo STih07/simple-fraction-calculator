@@ -1,10 +1,9 @@
 language: node_js
+node_js:
+- '8.10'
 
 before_install:
-  npm i -g npm@latest typescript@latest
-
-before_script:
-  tsc
+- npm i -g npm@latest typescript@~3.3
 
 script:
   npm test
