@@ -5,6 +5,7 @@ import {CalculatorService} from "./calculator-service";
 import {Simplifier} from "./simplifier";
 
 const bracketsRegexp = /\((?:[^(]*?\))/;
+const fracRegexp = /^\s*(-?[\d]+\/-?[\d]+|-?[\d]+)/;
 
 
 export class Calculator {
@@ -49,6 +50,7 @@ export class Calculator {
                 throw new Error('Unexpected input.')
             }
         }
-        return exp.trim();
+        if( exp.match(fracRegexp) ) return exp.trim();
+        else throw new Error('Unexpected input.');
     }
 }
